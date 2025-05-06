@@ -2,7 +2,8 @@ N <- 1000
 z_iter <- c()
 lmao <- c()
 
-for (epoch in 1:400) {
+for (epoch in 1:400) 
+{
   set.seed(epoch)  # Ensure reproducibility per epoch
   prob <- rep(1/6, 6)
   

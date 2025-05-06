@@ -17,3 +17,20 @@ barplot(data, beside = TRUE, col=c("blue", "red"),
         legend.text = rownames((data)), args.legend = list(title="Comparaison des probabilités"))
 print(dim(data))
 View(data)
+
+print(table(x))
+Q <- function(occur, prob)
+{
+  return (sum(((occur - prob)^2)/prob))
+}
+
+z = Q(table(x), N*prob)
+
+alpha = 0.05
+ddl = 5
+if (z <= qchisq(1 - alpha, ddl)){
+  print("H0 n'est pas rejetté")
+} else
+{
+  print("H0 est rejetté")
+}
